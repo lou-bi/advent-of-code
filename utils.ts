@@ -9,8 +9,8 @@ export async function fetchInput(y: string, d: string) {
     },
   });
 }
-export async function fetchHome() {
-  return await fetch(`https://adventofcode.com/`, {
+export async function fetchHome(y: string) {
+  return await fetch(`https://adventofcode.com/${y}`, {
     credentials: "include",
     headers: {
       "User-Agent":
