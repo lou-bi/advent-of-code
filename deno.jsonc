@@ -1,7 +1,7 @@
 {
   "tasks": {
     "scaffold": "deno run -A --env scaffold.ts",
-    "display": "deno run -A --env display.ts"
+    "readme": "deno run -A --env buildReadme.ts"
   },
   "permissions": {
     "default": {

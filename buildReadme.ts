@@ -1,4 +1,5 @@
-import { fetchHome } from "./utils.ts";
+import { fetchHome } from "./utils/network.ts";
+
 const [year] = Deno.args;
 if (!year) {
   console.error("Missing arg: year");
