@@ -28,8 +28,8 @@ let readme = `## ${year}\n### Total: ${total}/${res.length * 2}  \n`;
 res.forEach((el, i) => {
   const d = i + 1;
   readme += `[Day ${
-    d < 10 ? "&nbsp;&nbsp;" : ""
-  }${d}: ](https://adventofcode.com/${year}/day/${d})${"⭐".repeat(el)}  \n`;
+    d < 10 ? "0" : ""
+  }${d}:](https://adventofcode.com/${year}/day/${d}) ${"⭐".repeat(el)}  \n`;
 });
 
 await Deno.writeTextFile(`${year}/README.md`, readme);
