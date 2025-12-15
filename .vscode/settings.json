@@ -1,0 +1,5 @@
+{
+  "deno.enable": true,
+  "deno.envFile": ".env",
+  "deno.lint": true
+}
