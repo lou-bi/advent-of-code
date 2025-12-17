@@ -1,61 +1,62 @@
 // @ts-nocheck .
-import { readFile } from "#io";
-const rinput = readFile(import.meta.dirname, "in.txt");
+import { readFile } from '#io'
 
-const input = rinput.split("\n");
+const rinput = readFile(import.meta.dirname, 'in.txt')
+
+const input = rinput.split('\n')
 
 const op = {
-  "*": (a, b) => a * b,
-  "+": (a, b) => a + b,
-};
+  '*': (a, b) => a * b,
+  '+': (a, b) => a + b,
+}
 
-const opLine = input.pop();
-const bitOps = [];
-let isCounting = false;
-let bo;
+const opLine = input.pop()
+const bitOps = []
+let _isCounting = false
+let bo
 for (const char of opLine) {
-  if (char === "+" || char === "*") {
-    if (bo) bitOps.push(bo);
-    bo = { op: op[char], c: 0, o: char };
-    isCounting = true;
+  if (char === '+' || char === '*') {
+    if (bo) bitOps.push(bo)
+    bo = { op: op[char], c: 0, o: char }
+    _isCounting = true
   } else {
-    bo.c++;
+    bo.c++
   }
 }
-bo.c++;
-bitOps.push(bo);
+bo.c++
+bitOps.push(bo)
 
-const nums = [];
+const nums = []
 
 for (const line of input) {
-  const num = [];
-  let lastI = 0;
+  const num = []
+  let lastI = 0
   for (const bo of bitOps) {
-    num.push(line.slice(lastI, lastI + bo.c));
-    lastI += bo.c + 1;
+    num.push(line.slice(lastI, lastI + bo.c))
+    lastI += bo.c + 1
   }
-  nums.push(num);
+  nums.push(num)
 }
 
-const nunums = [];
+const nunums = []
 for (let col = 0; col < bitOps.length; col++) {
-  let stackNum = [];
-  let index = bitOps[col].c - 1;
+  const stackNum = []
+  let index = bitOps[col].c - 1
   while (index >= 0) {
-    const nn = [];
+    const nn = []
     for (const line of nums) {
-      nn.push(line[col][index]);
+      nn.push(line[col][index])
     }
-    stackNum.push(nn);
-    index--;
+    stackNum.push(nn)
+    index--
   }
-  nunums.push(stackNum);
+  nunums.push(stackNum)
 }
 
-let res = 0;
+let res = 0
 
 for (let i = 0; i < nunums.length; i++) {
-  let c = eval(nunums[i].map((n) => n.join("").trim()).join(bitOps[i].o));
-  res += c;
+  const c = eval(nunums[i].map((n) => n.join('').trim()).join(bitOps[i].o))
+  res += c
 }
-console.log(res);
+console.log(res)

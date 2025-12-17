@@ -1,3 +1,3 @@
-import { BitMatrix } from "./BitMatrix.ts";
+import { BitMatrix } from './BitMatrix.ts'
 
-export { BitMatrix };
+export { BitMatrix }

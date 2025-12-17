@@ -1,25 +1,26 @@
 // @ts-nocheck .
-import { readFile } from "#io";
-const input = readFile(import.meta.dirname, "in.txt");
+import { readFile } from '#io'
+
+const input = readFile(import.meta.dirname, 'in.txt')
 const lines = input
   .trim()
-  .replaceAll("R", "")
-  .replaceAll("L", "-")
-  .split("\n")
-  .map(Number);
-let c = 0;
-let p = 50;
+  .replaceAll('R', '')
+  .replaceAll('L', '-')
+  .split('\n')
+  .map(Number)
+let c = 0
+let p = 50
 
 for (let el in lines) {
   while (el !== 0) {
-    p = mod(p - Math.sign(el), 100);
-    if (p === 0) c++;
-    el -= Math.sign(el);
+    p = mod(p - Math.sign(el), 100)
+    if (p === 0) c++
+    el -= Math.sign(el)
   }
 }
 
-console.log(c);
+console.log(c)
 
 function mod(n, m) {
-  return ((n % m) + m) % m;
+  return ((n % m) + m) % m
 }
