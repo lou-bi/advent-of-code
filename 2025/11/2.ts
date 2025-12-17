@@ -1,5 +1,6 @@
 // @ts-nocheck .
-const input = Deno.readTextFileSync("in.txt");
+import { readFile } from "#io";
+const input = readFile(import.meta.dirname, "in.txt");
 
 const network = input
   .trim()

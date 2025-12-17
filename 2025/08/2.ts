@@ -1,5 +1,6 @@
 // @ts-nocheck .
-const input = Deno.readTextFileSync("in.txt");
+import { readFile } from "#io";
+const input = readFile(import.meta.dirname, "in.txt");
 
 const coords = input.trim().split("\n");
 
@@ -39,7 +40,6 @@ main: for (const { a, b } of ds) {
       }
     }
     if (ns.some((n) => n.size === coords.length)) {
-      console.log("found");
       const x1 = a.split(",")[0];
       const x2 = b.split(",")[0];
       console.log(x1 * x2);

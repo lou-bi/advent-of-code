@@ -1,5 +1,6 @@
-// @ts-nocheck bla
-const rinput = Deno.readTextFileSync("in.txt");
+// @ts-nocheck .
+import { readFile } from "#io";
+const rinput = readFile(import.meta.dirname, "in.txt");
 
 const input = rinput.split("\n").map((l) => l.replaceAll(/\s+/g, " ").trim());
 
@@ -17,11 +18,8 @@ for (let i = 0; i < operators.length; i++) {
   let tr = op[operators[i]](nums[0][i], nums[1][i]);
   for (let j = 2; j < nums.length; j++) {
     const row = nums[j];
-    console.log(op[operators[i]], tr, nums[j][i]);
     tr = op[operators[i]](tr, nums[j][i]);
-    console.log(tr);
   }
-  console.log();
   res += tr;
 }
 
