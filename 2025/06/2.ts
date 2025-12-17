@@ -1,5 +1,6 @@
-// @ts-nocheck bla
-const rinput = Deno.readTextFileSync("in.txt");
+// @ts-nocheck .
+import { readFile } from "#io";
+const rinput = readFile(import.meta.dirname, "in.txt");
 
 const input = rinput.split("\n");
 

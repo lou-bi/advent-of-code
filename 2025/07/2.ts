@@ -1,5 +1,6 @@
-// @ts-nocheck bla
-const input = Deno.readTextFileSync("in.txt");
+// @ts-nocheck .
+import { readFile } from "#io";
+const input = readFile(import.meta.dirname, "in.txt");
 
 const grid = input
   .trim()

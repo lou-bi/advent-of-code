@@ -1,5 +1,5 @@
 ## 2025
-### Total: 20/24  
+### Total: 24/24  
 [Day 01:](https://adventofcode.com/2025/day/1) ⭐⭐  
 [Day 02:](https://adventofcode.com/2025/day/2) ⭐⭐  
 [Day 03:](https://adventofcode.com/2025/day/3) ⭐⭐  
@@ -8,7 +8,7 @@
 [Day 06:](https://adventofcode.com/2025/day/6) ⭐⭐  
 [Day 07:](https://adventofcode.com/2025/day/7) ⭐⭐  
 [Day 08:](https://adventofcode.com/2025/day/8) ⭐⭐  
-[Day 09:](https://adventofcode.com/2025/day/9) ⭐  
-[Day 10:](https://adventofcode.com/2025/day/10)   
+[Day 09:](https://adventofcode.com/2025/day/9) ⭐⭐  
+[Day 10:](https://adventofcode.com/2025/day/10) ⭐⭐  
 [Day 11:](https://adventofcode.com/2025/day/11) ⭐⭐  
-[Day 12:](https://adventofcode.com/2025/day/12) ⭐  
+[Day 12:](https://adventofcode.com/2025/day/12) ⭐⭐  

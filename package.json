@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "imports": {
+    "#io": "./algoUtils/io.ts",
+    "#iter": "./algoUtils/iter.ts",
+    "#ds": "./algoUtils/dataStructures/index.ts"
+  },
+  "scripts": {
+    "scaffold": "node ./bin/scaffold.ts",
+    "readme": "node ./bin/buildReadme.ts"
+  },
+  "devDependencies": {
+    "@types/node": "25.0.2"
+  },
+  "dependencies": {
+    "z3-solver": "^4.15.4"
+  }
+}

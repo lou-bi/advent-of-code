@@ -1,4 +1,6 @@
-const input = Deno.readTextFileSync("in.txt");
+// @ts-nocheck .
+import { readFile } from "#io";
+const input = readFile(import.meta.dirname, "in.txt");
 const lines = input
   .trim()
   .replaceAll("R", "")
@@ -14,10 +16,8 @@ for (let el in lines) {
     if (p === 0) c++;
     el -= Math.sign(el);
   }
-  console.log(p);
 }
 
-console.log("\ncccc");
 console.log(c);
 
 function mod(n, m) {
