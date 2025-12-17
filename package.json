@@ -1,9 +1,9 @@
 {
   "type": "module",
   "imports": {
-    "#io": "./algoUtils/io.ts",
-    "#iter": "./algoUtils/iter.ts",
-    "#ds": "./algoUtils/dataStructures/index.ts"
+    "#io": "./utils/io.ts",
+    "#iter": "./utils/iter.ts",
+    "#ds": "./utils/dataStructures/index.ts"
   },
   "scripts": {
     "scaffold": "node ./bin/scaffold.ts",
