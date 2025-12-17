@@ -1,0 +1,19 @@
+{
+  "formatter": {
+    "indentStyle": "space"
+  },
+  "files": {
+    "includes": ["**/*.js", "**/*.ts", "**/!template.ts"]
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  },
+
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  }
+}

@@ -1,9 +1,8 @@
-// @ts-nocheck .
 import { readFile, readLines } from "#io";
 
 let res = 0;
 for await (const line of readLines(import.meta.dirname, "in.txt")) {
-  const m = line.match(/([a-z\-]+)(\d+)\[([a-z]+)\]$/);
+  const m = line.match(/([a-z-]+)(\d+)\[([a-z]+)\]$/);
   const name = m[1];
   const id = Number(m[2]);
   const checkSum = m[3];

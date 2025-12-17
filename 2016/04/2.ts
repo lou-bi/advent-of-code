@@ -1,5 +1,4 @@
-import { readFile, readLines } from "#io";
-import { range } from "#iter";
+import { readLines } from "#io";
 
 const alpha = "abcdefghijklmnopqrstuvwxyz";
 const mod = 26;
@@ -15,5 +14,5 @@ for await (const line of readLines(import.meta.dirname, "in.txt")) {
     }
     ns += alpha[(alpha.indexOf(c) + offset) % mod];
   }
-  if (ns.includes("northpole object storage")) console.log(ns, offset);
+  if (ns.includes("northpole object storage")) console.log(offset);
 }
