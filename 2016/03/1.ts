@@ -1,15 +1,15 @@
 // @ts-nocheck .
-import { readFile, readLines } from "#io";
+import { readLines } from '#io'
 
-let res = 0;
-let rows = [];
-for await (const line of readLines(import.meta.dirname, "in.txt")) {
+let res = 0
+let rows = []
+for await (const line of readLines(import.meta.dirname, 'in.txt')) {
   if (rows.length < 3) {
-    const m = line.match(/^(?:\s+)?(\d+)\s+(\d+)\s+(\d+)$/);
-    const n1 = Number(m[1]);
-    const n2 = Number(m[2]);
-    const n3 = Number(m[3]);
-    rows.push([n1, n2, n3]);
+    const m = line.match(/^(?:\s+)?(\d+)\s+(\d+)\s+(\d+)$/)
+    const n1 = Number(m[1])
+    const n2 = Number(m[2])
+    const n3 = Number(m[3])
+    rows.push([n1, n2, n3])
   }
   if (rows.length === 3) {
     if (
@@ -17,24 +17,24 @@ for await (const line of readLines(import.meta.dirname, "in.txt")) {
       rows[0][0] + rows[2][0] > rows[1][0] &&
       rows[2][0] + rows[1][0] > rows[0][0]
     ) {
-      res++;
+      res++
     }
     if (
       rows[0][1] + rows[1][1] > rows[2][1] &&
       rows[0][1] + rows[2][1] > rows[1][1] &&
       rows[2][1] + rows[1][1] > rows[0][1]
     ) {
-      res++;
+      res++
     }
     if (
       rows[0][2] + rows[1][2] > rows[2][2] &&
       rows[0][2] + rows[2][2] > rows[1][2] &&
       rows[2][2] + rows[1][2] > rows[0][2]
     ) {
-      res++;
+      res++
     }
-    rows = [];
+    rows = []
   }
 }
 
-console.log(res);
+console.log(res)

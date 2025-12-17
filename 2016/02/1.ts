@@ -1,5 +1,5 @@
 // @ts-nocheck .
-import { readFile, readLines } from "#io";
+import { readLines } from '#io'
 
 const nextPos = {
   1: { U: 1, R: 2, D: 4, L: 1 },
@@ -11,14 +11,14 @@ const nextPos = {
   7: { U: 4, R: 8, D: 7, L: 7 },
   8: { U: 5, R: 9, D: 8, L: 7 },
   9: { U: 6, R: 9, D: 9, L: 8 },
-};
-let pos = 5;
-let code = "";
-for await (const line of readLines(import.meta.dirname, "in.txt")) {
-  const instr = line.split("");
-  for (const d of instr) {
-    pos = nextPos[pos][d];
-  }
-  code += pos;
 }
-console.log(code);
+let pos = 5
+let code = ''
+for await (const line of readLines(import.meta.dirname, 'in.txt')) {
+  const instr = line.split('')
+  for (const d of instr) {
+    pos = nextPos[pos][d]
+  }
+  code += pos
+}
+console.log(code)

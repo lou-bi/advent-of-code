@@ -1,29 +1,30 @@
 // @ts-nocheck .
-import { readFile } from "#io";
-const input = readFile(import.meta.dirname, "in.txt");
+import { readFile } from '#io'
+
+const input = readFile(import.meta.dirname, 'in.txt')
 
 const lines = input
   .trim()
-  .split("\n")
-  .map((l) => l.split("").map(Number));
+  .split('\n')
+  .map((l) => l.split('').map(Number))
 
-let r = 0;
+let r = 0
 
 for (const line of lines) {
-  let fi = 0;
-  const acc = [];
+  let fi = 0
+  const acc = []
 
   for (let max = 11; max >= 0; max--) {
-    let f = 0;
+    let f = 0
     for (let i = fi; i < line.length - max; i++) {
       if (line[i] > f) {
-        f = line[i];
-        fi = i + 1;
+        f = line[i]
+        fi = i + 1
       }
     }
-    acc.push(f);
+    acc.push(f)
   }
-  r += +acc.join("");
+  r += +acc.join('')
 }
 
-console.log(r);
+console.log(r)

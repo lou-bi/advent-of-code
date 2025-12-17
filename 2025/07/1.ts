@@ -1,31 +1,32 @@
 // @ts-nocheck .
-import { readFile } from "#io";
-const input = readFile(import.meta.dirname, "in.txt");
+import { readFile } from '#io'
+
+const input = readFile(import.meta.dirname, 'in.txt')
 
 const grid = input
   .trim()
-  .split("\n")
-  .map((l) => l.split(""));
-grid[1][grid[0].indexOf("S")] = "|";
+  .split('\n')
+  .map((l) => l.split(''))
+grid[1][grid[0].indexOf('S')] = '|'
 
-let res = 0;
+let res = 0
 for (let i = 2; i < grid.length; i++) {
   for (let j = 0; j < grid[0].length; j++) {
-    if (grid[i][j] === "^") {
-      if (grid[i - 1][j] === "|") {
-        res++;
-        let offset = 0;
+    if (grid[i][j] === '^') {
+      if (grid[i - 1][j] === '|') {
+        res++
+        let offset = 0
         try {
-          while (grid[i + offset][j - 1] !== "^") {
-            grid[i + offset][j - 1] = "|";
-            offset++;
+          while (grid[i + offset][j - 1] !== '^') {
+            grid[i + offset][j - 1] = '|'
+            offset++
           }
         } catch {}
         try {
-          offset = 0;
-          while (grid[i + offset][j + 1] !== "^") {
-            grid[i + offset][j + 1] = "|";
-            offset++;
+          offset = 0
+          while (grid[i + offset][j + 1] !== '^') {
+            grid[i + offset][j + 1] = '|'
+            offset++
           }
         } catch {}
       }
@@ -33,4 +34,4 @@ for (let i = 2; i < grid.length; i++) {
   }
 }
 
-console.log(res);
+console.log(res)

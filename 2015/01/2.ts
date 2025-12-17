@@ -1,8 +1,8 @@
 // @ts-nocheck .
-import { readFile, readLines } from "#io";
+import { readFile, readLines } from '#io'
 
-for await (const line of readLines(import.meta.dirname, "test.txt")) {
+for await (const _line of readLines(import.meta.dirname, 'test.txt')) {
   //
 }
 
-const input = readFile(import.meta.dirname, "test.txt");
+const _input = readFile(import.meta.dirname, 'test.txt')

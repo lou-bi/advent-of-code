@@ -1,21 +1,22 @@
 // @ts-nocheck .
-import { readFile } from "#io";
-const input = readFile(import.meta.dirname, "in.txt");
+import { readFile } from '#io'
+
+const input = readFile(import.meta.dirname, 'in.txt')
 
 const instr = input
   .trim()
-  .replaceAll("R", "")
-  .replaceAll("L", "-")
-  .split("\n")
-  .map(Number);
+  .replaceAll('R', '')
+  .replaceAll('L', '-')
+  .split('\n')
+  .map(Number)
 
-let dialPos = 50;
-let c = 0;
+let dialPos = 50
+let c = 0
 for (const el of instr) {
-  const incr = Math.sign(el);
+  const incr = Math.sign(el)
   for (let i = 0; i < Math.abs(el); i++) {
-    dialPos += incr;
-    if (dialPos % 100 === 0) c++;
+    dialPos += incr
+    if (dialPos % 100 === 0) c++
   }
 }
-console.log(c);
+console.log(c)
