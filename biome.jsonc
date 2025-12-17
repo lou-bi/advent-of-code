@@ -12,7 +12,17 @@
   "files": {
     "includes": ["**/*.js", "**/*.ts", "!**/template.ts"]
   },
-
+  "linter": {
+    "rules": {
+      "suspicious": {
+        "noAssignInExpressions": "off",
+        "useIterableCallbackReturn": "off"
+      },
+      "security": {
+        "noGlobalEval": "off"
+      }
+    }
+  },
   "formatter": {
     "indentStyle": "space"
   },

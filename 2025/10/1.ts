@@ -19,7 +19,7 @@ const sets = input
       .split(' ')
       .map((btn) => {
         const b = '0'.repeat(m[1].length).split('')
-        btn.split(',').map((_x) => {
+        btn.split(',').forEach((_x) => {
           for (const x of btn) {
             b[x] = '1'
           }

@@ -1,4 +1,4 @@
-export function* zip(...args: any[]) {
+export function* zip(...args: unknown[][]) {
   const max = Math.min(...args.map((a) => a.length))
   const n = args.length
   for (let i = 0; i < max; i++) {

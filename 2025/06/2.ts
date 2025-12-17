@@ -1,19 +1,23 @@
-// @ts-nocheck .
 import { readFile } from '#io'
 
 const rinput = readFile(import.meta.dirname, 'in.txt')
 
 const input = rinput.split('\n')
-
 const op = {
-  '*': (a, b) => a * b,
-  '+': (a, b) => a + b,
+  '*': (a: number, b: number) => a * b,
+  '+': (a: number, b: number) => a + b,
+} as const
+type OperatorMap = typeof op
+type bo = {
+  op: OperatorMap[keyof OperatorMap]
+  c: number
+  o: keyof OperatorMap
 }
 
 const opLine = input.pop()
 const bitOps = []
 let _isCounting = false
-let bo
+let bo: bo
 for (const char of opLine) {
   if (char === '+' || char === '*') {
     if (bo) bitOps.push(bo)
